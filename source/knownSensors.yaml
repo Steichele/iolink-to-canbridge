@@ -1,0 +1,145 @@
+defaultSignal:
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "digit"
+  
+diag_64:
+  pfix: "diag"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "PQI"
+
+diag_80:
+  pfix: "Ven"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "Vendor"
+
+diag_96:
+  pfix: "Dev"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "Dev"
+
+diag_112:
+  pfix: "Event"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "Event"
+
+"902915_32":
+  name: "TUMG_UWT_Juno"
+  is_signed: true
+  scale: 0.01
+  offset: 0
+  unit: "°C"
+
+"2700336_16":
+  name: "TUMG_UWT_Ana"
+  is_signed: false
+  scale: 0.007081
+  offset: -48.5
+  unit: "°C"
+
+"2700336ge_16":
+  name: "TUMG_UWT_AnaSchock"
+  is_signed: false
+  scale: 0.01279
+  offset: -100
+  unit: "°C"
+
+MC1_SSP_S_0:
+  pfix: "PQI"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "PQI"
+
+MC1_SSP_S_16:
+  pfix: "turn"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "dom"
+
+MC1_SSP_S_32:
+  pfix: "pos"
+  is_signed: false
+  scale: 0.0054932478828107
+  offset: 0
+  unit: "°"
+
+MC1_P_S_0:
+  pfix: "PQI"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "PQI"
+
+MC1_P_S_16:
+  pfix: "turn"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "dom"
+
+MC1_P_S_32:
+  pfix: "pos"
+  is_signed: false
+  scale: 0.0054932478828107
+  offset: 0
+  unit: "°"
+
+TH1_P_0:
+  pfix: "PQI"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "PQI"
+
+TH1_P_16:
+  pfix: "pos"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "Dig"
+
+TH1_P_32:
+  pfix: "pos"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "Dig"
+
+TF1_PP_0:
+  pfix: "PQI"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "PQI"
+
+TF1_PP_16:
+  pfix: "pos1"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "Dig"
+
+TF1_PP_32:
+  pfix: "pos2"
+  is_signed: false
+  scale: 0.5
+  offset: 0
+  unit: "Dig"
+
+TF1_PP_48:
+  pfix: "pos3"
+  is_signed: false
+  scale: 1
+  offset: 0
+  unit: "Dig"

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="static/style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Canlogger</title>
+      
+    </head>
+    <body style="background-color: #313131;">
+        <center>
+            <table align="center">
+                <tr>
+                    <td>
+                        <form method="POST" action="/writeconfig" align="center">
+                            <label for="file">Datei auswählen:</label>
+                            <select id="file" name="file">
+                                {% for file in cs.filelist %}
+                                    <option value="{{ file }}">{{ file }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" name="selection">Fileauswahl</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       <!-- <a href="http://127.0.0.1:8081">zurück</a> -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+
+        {% if cs.beschreibung %}
+        <center>
+        <table align="center">
+                <tr>
+                    <td>
+                    <h2>Beschreibung des Datensatz {{cs.configfile}}</h2>
+                        <ul>
+                            
+                            <li><strong>Device_Type:</strong> {{ cs.beschreibung.find('Device_Type').text }}</li>
+                            <li><strong>Error_Register:</strong> {{ cs.beschreibung.find('Error_Register').text }}</li>
+                            <li><strong>Manufacturer_Status_Register:</strong> {{ cs.beschreibung.find('Manufacturer_Status_Register').text }}</li>
+                            <li><strong>Manufacturer_Device_Name:</strong> {{ cs.beschreibung.find('Manufacturer_Device_Name').text }}</li>
+                            <li><strong>Manufacturer_Hardware_Version:</strong> {{ cs.beschreibung.find('Manufacturer_Hardware_Version').text }}</li>
+                            <li><strong>Manufacturer_Software_Version:</strong> {{ cs.beschreibung.find('Manufacturer_Software_Version').text }}</li>
+                            <li><strong>Guard_Time:</strong> {{ cs.beschreibung.find('Guard_Time').text }}</li>
+                            <li><strong>Life_Time_Factor:</strong> {{ cs.beschreibung.find('Life_Time_Factor').text }}</li>
+                            <li><strong>Producer_Heartbeat_Time:</strong> {{ cs.beschreibung.find('Producer_Heartbeat_Time').text }}</li>
+                            <li><strong>Node-ID:</strong> {{ cs.beschreibung.find('Node-ID').text }}</li>    
+                            <li><strong>CAN_bit_rate:</strong> {{ cs.datensatz.find('CAN_bit_rate').text }} 
+                            <li><strong>Measuring_Units_per_Revolution:</strong> {{ cs.datensatz.find('Measuring_Units_per_Revolution').text }} 
+                            <li><strong>Serial_Number:</strong> {{ cs.datensatz.find('Serial_Number').text }} 
+                            <li><strong>Profile_and_Software_Version:</strong> {{ cs.datensatz.find('Profile_and_Software_Version').text }} 
+                            <li><strong>Single-Turn_Resolution_-_Measuring_Step:</strong> {{ cs.datensatz.find('Single-Turn_Resolution_-_Measuring_Step').text }} 
+                            <li><strong>Position_Value:</strong> {{ cs.datensatz.find('Position_Value').text }} 
+        
+                        </ul>
+                    </td>
+                </tr>
+               
+        </table>
+        {% endif %}
+
+
+        {% if cs.savefile %}
+        <h3>Klicke auf den Link, um die Datei herunterzuladen!</h3>
+        <a href="{{ url_for('downloadfile') }}" download="{{ cs.dlfile }}">Datei herunterladen</a>
+        {% endif %}
+        <br>
+        <br>
+        <form method="POST" action="/writeconfig" align="center">
+        <button type="submit" name="delete" style="background-color:red">Dateiverzeichnis aufräumen
+                Achtung alle Daten werden gelöscht!
+        </button> 
+        </form>
+           
+    </center>
+    </body>
+</html>
+
+

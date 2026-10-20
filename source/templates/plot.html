@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoded CAN Data Plot</title>
+</head>
+<body>
+    <center>
+        <table align="center" width = "100%">
+            <tr>
+                <td>
+                    <h2>Trend:</h2>
+                    {{ cs.plotgraph|safe }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center>
+                        <a href="http://{{ cs.myip }}:8081">zurück zum WebInterface</a>
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

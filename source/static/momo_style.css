@@ -1,0 +1,205 @@
+/* Stil für den Body */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #f4f0f0;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Overlay-GIF */
+.overlay-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    z-index: 10;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Links */
+a {
+    color: #183e66;
+    text-decoration: none;
+    font-size: large;
+}
+
+a:hover {
+    color: #df0e0e;
+    text-decoration: underline;
+}
+
+/* Überschriften */
+h2 {
+    text-align: center;
+    color: #525151;
+    font-weight: bolder;
+}
+
+/* Tabellen */
+table {
+    color: #000000;
+    border-collapse: collapse;
+    background-color: #cecece;
+    border-radius: 20px;
+    font-size: large;
+    vertical-align: top;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+table, th, td {
+    background-color: #cecece;
+    border: 0px solid #535050;
+    border-radius: 20px;
+    font-size: large;
+    vertical-align: top;
+}
+
+th, td {
+    padding: 0px;
+    text-align: left;
+}
+
+.tdleft, .tdright, .tdcenter {
+    padding: 0px;
+}
+
+.tdleft { text-align: left; }
+.tdright { text-align: right; }
+.tdcenter { text-align: center; }
+
+/* Formulare */
+form {
+    text-align: left;
+    align-items: center;
+    align-content: center;
+
+}
+
+/* Auswahlfelder */
+/* Einheitliche Größe und Stil für Eingabeelemente */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea,
+select,
+button,
+input[type="submit"] {
+    width: 250px;            /*Einheitliche Breite*/
+    height: 40px;            /* Einheitliche Höhe */
+    font-size: 16px;         /* Einheitliche Schriftgröße */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+/* Stil für Datei-Upload */
+input[type="file"] {
+    font-size: 16px;
+    color: #6c6c6c; /* helle Textfarbe */
+    background-color: #000000; /* dunkler Hintergrund */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    width: 350px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+
+
+/* Optional: Buttons etwas auffälliger */
+button,
+input[type="file"],
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    padding: 0px;
+}
+
+/* Flexbox-Box */
+.box {
+    /* flex: 1 1 300px;
+    padding: 1rem;
+    box-sizing: border-box; */
+}
+
+/* Bereichsdefinitionen */
+#sysinfo {
+    text-align: center;
+}
+
+#canData {
+
+    align-items: center;
+    padding: 40px ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffffff;
+}
+
+#canData h2 {
+    font-family: Arial, sans-serif;
+}
+
+#decoded {
+
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    align-items: center;
+}
+
+#messung {    
+    display: flex;
+    padding: 30px;
+    background-color: #cecece;
+}
+
+#datenblatt a {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#datenblatt iframe {
+    height: 800px;
+    width: 100%;
+    border: none;
+    overflow-y: hidden;
+    font-size: 22px;
+    background-color: #cecece;
+}
+
+#status {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000000;  
+    padding: 10px;
+    margin: 10px auto;
+}
+.center {
+    text-align: center;
+}

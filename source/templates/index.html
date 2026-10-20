@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IO-Link to Can Bridge</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+ <img src="static/Novotechnik.gif" alt="Overlay GIF" class="overlay-image">
+
+<center>
+    <h1> IO-Link to Can Bridge </h1>
+    <div id="sysinfo"><h3>Sysinfo: {{ cs.hostname }}  <a href="http://{{ cs.myip }}:8081">IP der ETH0:{{ cs.myip }}</a>  Festplattenbelegung[%]: {{cs.diskusage}} Freier Arbeitsspeicher[MB]: {{cs.freeRam}}</h3></div>
+<table border="1" style="width:90%" aling="center">
+<tr><td>
+       
+        <table border="0" align="center" style="width:25%" >
+     
+            <tr>
+            <td>
+                <h2> Setup </h2>
+            </td>
+            <td>  
+                
+                <form method="post" action="/" align="center">
+
+            <tr>
+            
+            <td>
+                <label for="cycle">Can-send Cycles:</label>
+            </td>
+            <td>
+                <select id="cycle" name="cycle">
+                {% for key, value in cs.cycle.items() %}
+                    <option value="{{ value }}">{{ key }}</option>
+                {% endfor %}
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <label for="modulcount">Modulanzahl:</label>
+            </td>
+            <td>
+                <select id="modulcount" name="modulcount">
+                {% for key, value in cs.modulcount.items() %}
+                    <option value="{{ value }}">{{ key }}</option>
+                {% endfor %}
+                </select>
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="startip" style="display: flex; justify-content: space-between;">
+                        <span>IP des ersten Moduls:</span>
+                        <span>192.168.1.</span>
+                      </label>
+                </td>
+                <td>
+                    <select id="startip" name="startip">
+                    {% for key, value in cs.startip.items() %}
+                        <option value="{{ value }}">{{ key }}</option>
+                    {% endfor %}
+                </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label for="canids">ID der ersten Can-Botschaft:</label>
+                </td>
+                <td>
+                    <select id="canids" name="canids">
+                    {% for key, value in cs.canids.items() %}
+                        <option value="{{ value }}">{{ key }}</option>
+                    {% endfor %}
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="function">Modus:</label>
+                </td>
+                <td>
+                    <select id="function" name="function">
+                    {% for key, value in cs.function.items() %}
+                        <option value="{{ value }}">{{ key }}</option>
+                    {% endfor %}
+                </select>
+                </td>
+            </tr>
+            </td>
+            <td>
+                <label for="knoten">Can:</label>
+            </td>
+            <td>
+                <select id="knoten" name="knoten">
+                {% for key, value in cs.knoten.items() %}
+                    <option value="{{ value }}">{{ key }}</option>
+                {% endfor %}
+            </select>
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center">
+                        <button type="submit"  name="transmit">Eingabe</button>
+                    </div>
+                    </form>
+                </td>
+            </tr>
+
+
+    
+        </table>
+      
+    <tr>
+    <td>
+        <h2>Ausgabe:</h2>
+       
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <div id="status"  align ="center" width = "100%" >  <pre>{{  cs.status|safe }}</pre>
+        {% if cs.savefile %}
+        <h3>Klicke auf den Link, um die Datei herunterzuladen!</h3>
+        <a href="{{ url_for('downloadfile') }}" download="{{ cs.dlfile }}">DBC-Datei herunterladen</a>
+        {% endif %}
+    </div>
+    </td>
+    </tr> 
+</table> 
+
+
+
+</td>
+</tr>
+</table>
+</center>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => {
+            const selectedValue = localStorage.getItem(select.id);
+            if (selectedValue) {
+                select.value = selectedValue;
+            }
+
+            select.addEventListener('change', (event) => {
+                localStorage.setItem(select.id, event.target.value);
+            });
+        });
+    });
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='jquery-3.6.0.min.js') }}"> </script>
+<script type="text/javascript"> 
+    const myip = "{{ cs.myip }}";
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

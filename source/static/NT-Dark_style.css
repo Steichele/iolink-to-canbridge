@@ -1,0 +1,219 @@
+html {
+    font-size: 1rem;
+}
+
+/* Stil für den Body */
+body {
+    font-family: Helvetica;
+    font-size: 1rem;
+    color: #000000;
+    background-color: #939388;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Overlay-GIF */
+.overlay-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90vw;
+    height: 90vh;
+    object-fit: contain;
+    z-index: 10;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Links */
+a {
+    color: #FFC72C;
+    text-decoration: none;
+    font-size: large;
+}
+
+a:hover {
+    color: #df0e0e;
+    text-decoration: underline;
+}
+
+/* Überschriften */
+h2 {
+    text-align: center;
+    color: #939388;
+    -webkit-text-stroke-color: #df0e0e;
+}
+
+/* Tabellen */
+table {
+    border-collapse: collapse;
+    background-color: #000000;
+    border-radius: 0.3125rem;
+    font-size: large;
+    vertical-align: top;
+    padding: 0.625rem;
+    border: 0.0625rem solid #ccc;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+}
+
+table, th, td {
+    border: 0rem solid #535050;
+    border-radius: 1.25rem;
+    font-size: large;
+    vertical-align: top;
+}
+
+th, td,
+.tdleft, .tdright, .tdcenter {
+    padding: 0rem;
+    text-align: left;
+}
+
+.tdleft { text-align: left; }
+.tdright { text-align: right; }
+.tdcenter { text-align: center; }
+
+#decodedtable tr:nth-child(even) {
+    filter: brightness(80%);
+}
+
+#decodedtable tr:nth-child(odd) {
+    filter: brightness(140%);
+}
+
+/* Formulare */
+form {
+    text-align: left;
+    align-items: center;
+    align-content: center;
+}
+
+/* Auswahlfelder */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea,
+select,
+button,
+input[type="submit"] {
+    width: 15.625rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid #ccc;
+    padding: 0.3125rem 0.625rem;
+    box-sizing: border-box;
+    margin: 0.3125rem 0;
+}
+
+input[type="file"] {
+    font-size: 1rem;
+    color: #f7f3f3;
+    background-color: #313131;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.3125rem;
+    padding: 0.5rem 0.75rem;
+    width: 21.875rem;
+    box-sizing: border-box;
+    margin: 0.3125rem 0;
+}
+
+button,
+input[type="file"],
+input[type="submit"] {
+    background-color: #002D72;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    padding: 0rem;
+}
+
+/* Flexbox-Box */
+.box {
+    /* flex: 1 1 18.75rem;
+    padding: 1rem;
+    box-sizing: border-box; */
+}
+
+/* Bereichsdefinitionen */
+#sysinfo {
+    text-align: center;
+}
+
+#canData {
+    align-items: center;
+    padding: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+#canData h2 {
+    font-family: Helvetica;
+}
+
+#decoded {
+    font-size: 1.1rem;
+    font-family: Helvetica;
+    align-items: center;
+}
+
+#messung {
+    display: flex;
+    padding: 1.875rem;
+}
+
+#datenblatt a {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+#datenblatt iframe {
+    height: 50rem;
+    width: 100%;
+    border: none;
+    overflow-y: hidden;
+    font-size: 1.4rem;
+}
+
+#status {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 0.625rem;
+    margin: 0.625rem auto;
+}
+
+#version {
+    position: absolute;
+    top: 1.875rem;
+    left: 9.375rem;
+    padding: 0.625rem;
+}
+
+.center {
+    text-align: center;
+}
+
+#logo {
+    position: absolute;
+    top: 1.875rem;
+    right: 9.375rem;
+    padding: 0.625rem;
+}
