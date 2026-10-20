@@ -1,0 +1,40 @@
+﻿[MASTER]
+# Enable the name checker plugin to check names against the coding standards.
+load-plugins=pylint.extensions.check_docs
+
+[MESSAGES CONTROL]
+# Disable some of the Pylint messages to match the typical flake8 configuration
+enable=missing-module-docstring,
+        missing-class-docstring,
+        missing-function-docstring,
+        too-few-public-methods,
+        import-error
+
+[FORMAT]
+# Set the maximum line length to 80, which is the default for flake8.
+max-line-length=80
+
+[REPORTS]
+# Only show messages without the full report.
+output-format=colorized
+reports=no
+
+[TYPECHECK]
+# flake8 does not check type hints by default, so we disable them here too.
+ignore-missing-imports=yes
+
+[BASIC]
+# Set naming style to match typical PEP8 standards checked by flake8.
+variable-naming-style=snake_case
+argument-naming-style=snake_case
+function-naming-style=snake_case
+method-naming-style=snake_case
+class-naming-style=PascalCase
+constant-naming-style=UPPER_CASE
+
+[DESIGN]
+# Limit the number of arguments a function can take to 5
+max-args=5
+
+# Limit the number of attributes a class can have to 10
+max-attributes=10

@@ -1,0 +1,37 @@
+﻿#Ignore generated folders
+
+#Ignore *.bak-files for testing
+*.bak
+*.txt
+!requirements.txt
+!src/requirements.txt
+*.pyc
+*.log
+*.xlsx
+*.exe
+*.buk
+
+#Ignore I/O-files/folders
+Data/
+build/*
+dist/*
+alt/*
+
+#Ignore 3rd party folders
+dist/*
+
+#Ignore Python folders
+.pytest_cache/
+__pycache__/
+tests/__pycache__/
+
+#virtual environment folder
+Venv/
+
+##Ignore all subfolders in general
+#*/
+##except:
+#!Docs_Templates/
+#!Additional_Tools/
+#!Output/
+!doc/
